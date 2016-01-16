@@ -7,7 +7,7 @@ public class SpawnItems : MonoBehaviour
 	public Transform[] SpawnPoints;
 	public float spawnTime = 1.5f; 
 
-	public GameObject kaiju; 
+	public GameObject kaiju;
 	//public GameObject[] kaiju;
 
 	// Use this for initialization
