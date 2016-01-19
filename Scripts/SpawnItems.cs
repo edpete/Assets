@@ -8,10 +8,13 @@ public class SpawnItems : MonoBehaviour
 	public float spawnTime = 1.5f;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
     public GameObject kaiju;
     public GameObject kclone;
     public float destroyTime = 3.0f;
 =======
+=======
+>>>>>>> master
 	public GameObject kaiju;
 	//public GameObject[] kaiju;
 >>>>>>> master
