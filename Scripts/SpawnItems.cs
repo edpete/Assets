@@ -5,13 +5,16 @@ public class SpawnItems : MonoBehaviour
 {
 
 	public Transform[] SpawnPoints;
-	public float spawnTime = 1.5f; 
+	public float spawnTime = 1.5f;
 
-	public GameObject kaiju; 
-	//public GameObject[] kaiju;
+    public GameObject kaiju;
+    public GameObject kclone;
+    public float destroyTime = 3.0f;
 
-	// Use this for initialization
-	void Start () 
+    //public GameObject[] kaiju;
+
+    // Use this for initialization
+    void Start () 
 	{
 		InvokeRepeating ("SpawnKaiju", spawnTime, spawnTime);
 	}
@@ -22,14 +25,20 @@ public class SpawnItems : MonoBehaviour
 	}
 
 	void SpawnKaiju()
-	{
+    {
+       
+
 		//DestroyScript is killing the object so... Need to clean this up. 
 		if (kaiju != null) 
 		
 		{
 			int spawnIndex = Random.Range (0, SpawnPoints.Length);
-			Instantiate (kaiju, SpawnPoints [spawnIndex].position, SpawnPoints [spawnIndex].rotation);
+			kclone = (GameObject) Instantiate (kaiju, SpawnPoints [spawnIndex].position, SpawnPoints [spawnIndex].rotation);
+
 		}
+        
+        //Destroy (this.gameObject, destroyTime);
+        Destroy(kclone, destroyTime);
 
 	}
 }
